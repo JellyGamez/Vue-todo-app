@@ -7,12 +7,11 @@ const tasks = ref([
     { label: "Do something else", completed: false, id: 2 },
     { label: "Do this instead", completed: false, id: 3   },
 ]);
-const input = ref('');
-
+const input = ref();
 const idToEdit = ref();
+
+
 const isEditing = computed(() => idToEdit.value !== undefined);
-
-
 const filters = computed(() => {
   return {
         todo: tasks.value.filter(task => !task.completed),
@@ -23,7 +22,7 @@ const filters = computed(() => {
 function addNewTask() {
   if (isEditing.value)
     {
-      const task = tasks.value.find(task => task.id == idToEdit.value);
+      const task = tasks.value.find(task => task.id === idToEdit.value);
       task.label = input.value;
       idToEdit.value = undefined;
     }
@@ -32,10 +31,12 @@ function addNewTask() {
   input.value = '';
 }
 
-function deleteTask(idToDelete) {
-  tasks.value = tasks.value.filter(task => task.id != idToDelete);
+function completeTask(taskId) {
+  tasks.value.find(task => task.id)
 }
-
+function deleteTask(taskId) {
+  tasks.value = tasks.value.filter(task => task.id !== taskId);
+}
 function editingTask(taskId) {
   idToEdit.value = taskId;
   input.value = tasks.value.find(task => task.id === taskId).label;
@@ -47,7 +48,7 @@ provide('editingTask', editingTask);
 </script>
 
 <template>
-  <div class="flex flex-col gap-10">
+  <div class="flex flex-col gap-6 bg-slate-100 border rounded-lg p-4">
 
     <div class="flex border rounded">
       <input class="w-full px-2" type="text" :placeholder="!isEditing ? 'Add new task' : 'Edit task'" v-model="input">

@@ -6,7 +6,6 @@ defineProps({ task: Object});
 
 const deleteTask = inject('deleteTask');
 const editingTask = inject('editingTask');
-
 </script>
 
 <template>
