@@ -22,26 +22,23 @@ const filters = computed(() => {
   }
 });
 
-
-const axios = require('axios');
-
 function addNewTask() {
   if (isEditing.value)
     {
       const task = tasks.value.find(task => task.id === idToEdit.value);
-      task.label = input.value;
+      task.label = mainInput.value;
       idToEdit.value = undefined;
     }
-  else if (input.value.trim() !== '')
-    tasks.value.push({label: input.value.trim(), completed: false, id: tasks.value.length + 1});
-  input.value = '';
+  else if (mainInput.value.trim() !== '')
+    tasks.value.push({label: mainInput.value.trim(), completed: false, id: tasks.value.length + 1});
+    mainInput.value = '';
 };
 function deleteTask(taskId) {
   tasks.value = tasks.value.filter(task => task.id !== taskId);
 };
 function editingTask(taskId) {
   idToEdit.value = taskId;
-  input.value = tasks.value.find(task => task.id === taskId).label;
+  mainInput.value = tasks.value.find(task => task.id === taskId).label;
 };
 
 provide('deleteTask', deleteTask);
