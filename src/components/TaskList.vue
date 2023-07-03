@@ -1,7 +1,7 @@
 <script setup>
 import TaskItem from './TaskItem.vue';
 
-defineProps({ listLabel: String, tasks: Array})
+defineProps({ listLabel: String, tasks: Array});
 
 </script>
 

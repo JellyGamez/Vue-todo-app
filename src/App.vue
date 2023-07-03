@@ -5,9 +5,9 @@ import ConfirmEditIcon from './components/icons/ConfirmEditIcon.vue';
 import AddIcon from './components/icons/AddIcon.vue';
 import SearchIcon from './components/icons/SearchIcon.vue';
 const tasks = ref([
-    { label: "Do something", completed: false, id: 1      },
-    { label: "Do something else", completed: false, id: 2 },
-    { label: "Do this instead", completed: false, id: 3   },
+    //{ label: "Do something", completed: false, id: 1      },
+    //{ label: "Do something else", completed: false, id: 2 },
+    //{ label: "Do this instead", completed: false, id: 3   },
     { label: "Do this insteaddd", completed: false, id: 4 },
 ]);
 const mainInput = ref('');
@@ -21,6 +21,9 @@ const filters = computed(() => {
     completed: tasks.value.filter(task => task.completed && task.label.includes(searchInput.value.trim())),
   }
 });
+
+
+const axios = require('axios');
 
 function addNewTask() {
   if (isEditing.value)
