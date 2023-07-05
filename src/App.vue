@@ -5,10 +5,10 @@ import ConfirmEditIcon from './components/icons/ConfirmEditIcon.vue';
 import AddIcon from './components/icons/AddIcon.vue';
 import SearchIcon from './components/icons/SearchIcon.vue';
 const tasks = ref([
-    //{ label: "Do something", completed: false, id: 1      },
-    //{ label: "Do something else", completed: false, id: 2 },
-    //{ label: "Do this instead", completed: false, id: 3   },
-    { label: "Do this insteaddd", completed: false, id: 4 },
+    { label: "Throw out the trash", completed: false, id: 1      },
+    { label: "Finish the homework", completed: false, id: 2 },
+    { label: "Water the flowers", completed: false, id: 3   },
+    { label: "Buy groceries", completed: false, id: 4 },
 ]);
 const mainInput = ref('');
 const searchInput = ref('');
@@ -47,15 +47,15 @@ provide('editingTask', editingTask);
 </script>
 
 <template>
-  <div class="flex flex-col gap-6 bg-gray-600 rounded-xl p-4">
+  <div class="max-w-96 flex flex-col gap-6 bg-green-600 rounded-xl p-6 ">
 
     <div class="flex">
-      <input class="w-full px-2 border-b border-white mr-4 bg-gray-600 text-white outline-none" 
+      <input class="w-full px-2 border-b border-white bg-green-600 mr-4 text-white placeholder-white outline-none" 
              type="text" 
              :placeholder="!isEditing ? 'Add new task' : 'Edit task'" 
              v-model="mainInput"
       >
-      <button class="py-2 px-2 rounded-xl bg-gray-500" @click="addNewTask"> 
+      <button class="py-2 px-2 rounded-xl bg-green-700" @click="addNewTask"> 
         
         <template v-if="isEditing">
           <ConfirmEditIcon/>
@@ -69,12 +69,12 @@ provide('editingTask', editingTask);
     </div>
 
     <div class="flex">
-      <input class="w-full px-2 border-b border-white mr-4 bg-gray-600 text-white outline-none" 
+      <input class="w-full px-2 border-b border-white bg-green-600 mr-4 text-white placeholder-white outline-none" 
              type="text" 
              placeholder="Search task" 
              v-model="searchInput"
       >
-      <div class="py-2 px-2 bg-gray-500 rounded-xl"> 
+      <div class="py-2 px-2 bg-green-700 rounded-xl"> 
         <SearchIcon/>
       </div>
     </div>

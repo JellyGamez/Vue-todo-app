@@ -3,7 +3,7 @@ import { inject } from 'vue';
 import DeleteIcon from './icons/DeleteIcon.vue';
 import EditIcon from './icons/EditIcon.vue';
 
-defineProps({ task: Object});
+defineProps({ task: Object });
 
 const deleteTask = inject('deleteTask');
 const editingTask = inject('editingTask');
@@ -11,7 +11,7 @@ const editingTask = inject('editingTask');
 
 <template>
     <div class="h-full flex space-x-2">
-        <div class="flex justify-between bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl w-full">
+        <div class="flex justify-between bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-xl w-full">
 
             <div class="flex space-x-2">
                 <input class="hover:cursor-pointer" type="checkbox" v-model="task.completed">
@@ -20,12 +20,12 @@ const editingTask = inject('editingTask');
 
             <div class="flex space-x-2">
 
-                <button @click="() => deleteTask(task.id)"> 
-                    <DeleteIcon/>
+                <button @click="() => deleteTask(task.id)">
+                    <DeleteIcon />
                 </button>
 
                 <button @click="() => editingTask(task.id)">
-                    <EditIcon/>
+                    <EditIcon />
                 </button>
 
             </div>
