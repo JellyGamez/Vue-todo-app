@@ -1,6 +1,18 @@
-# Simple-todo-app
+# Simple todo app
 
-This template should help get you started developing with Vue 3 in Vite.
+My first Vue app.
+Nothing too fancy, just a simple todo app as a starter project.
+
+
+## Features
+
+ - Add todo
+ - Delete todo
+ - Edit todo
+ - Mark todo as done
+ - Search todos
+
+
 
 ## Recommended IDE Setup
 
