@@ -46,36 +46,37 @@ provide('editingTask', editingTask);
 </script>
 
 <template>
-  <div
-    class="flex flex-col flex-grow overflow-y-auto gap-6 bg-green-600 rounded-xl p-6 absolute top-24 w-1/3 justify-center">
+  <div class="flex flex-col min-h-screen h-full bg-gray-600 items-center">
+    <div class="flex flex-col gap-6 bg-green-600 rounded-xl p-6 my-24 w-1/3 h-fit justify-center">
 
-    <div class="flex">
-      <input class="w-full px-2 border-b border-white bg-green-600 mr-4 text-white placeholder-white outline-none"
-        type="text" :placeholder="!isEditing ? 'Add new task' : 'Edit task'" v-model="mainInput">
-      <button class="py-2 px-2 rounded-full bg-green-700" @click="addNewTask">
+      <div class="flex">
+        <input class="w-full px-2 border-b border-white bg-green-600 mr-4 text-white placeholder-white outline-none"
+          type="text" :placeholder="!isEditing ? 'Add new task' : 'Edit task'" v-model="mainInput">
+        <button class="py-2 px-2 rounded-full bg-green-700" @click="addNewTask">
 
-        <template v-if="isEditing">
-          <ConfirmEditIcon />
-        </template>
+          <template v-if="isEditing">
+            <ConfirmEditIcon />
+          </template>
 
-        <template v-else="">
-          <AddIcon />
-        </template>
+          <template v-else="">
+            <AddIcon />
+          </template>
 
-      </button>
-    </div>
-
-    <div class="flex">
-      <input class="w-full px-2 border-b border-white bg-green-600 mr-4 text-white placeholder-white outline-none"
-        type="text" placeholder="Search task" v-model="searchInput">
-      <div class="py-2 px-2 bg-green-700 rounded-full">
-        <SearchIcon />
+        </button>
       </div>
+
+      <div class="flex">
+        <input class="w-full px-2 border-b border-white bg-green-600 mr-4 text-white placeholder-white outline-none"
+          type="text" placeholder="Search task" v-model="searchInput">
+        <div class="py-2 px-2 bg-green-700 rounded-full">
+          <SearchIcon />
+        </div>
+      </div>
+
+      <TaskList listLabel="To do tasks" :tasks="filters.todo" />
+
+      <TaskList listLabel="Completed tasks" :tasks="filters.completed" />
+
     </div>
-
-    <TaskList listLabel="To do tasks" :tasks="filters.todo" />
-
-    <TaskList listLabel="Completed tasks" :tasks="filters.completed" />
-
   </div>
 </template>
