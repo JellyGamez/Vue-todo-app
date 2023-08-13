@@ -11,14 +11,14 @@ const editingTask = inject('editingTask');
 
 <template>
     <div class="h-full flex space-x-2">
-        <div class="flex justify-between bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-xl w-full">
+        <div class="flex flex-wrap justify-between bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-xl w-full">
 
-            <div class="flex space-x-2">
+            <div class="flex gap-2 ">
                 <input class="hover:cursor-pointer accent-green-700" type="checkbox" v-model="task.completed">
-                <p class="pr-4"> {{ task.label }} </p>
+                <p class="pr-1"> {{ task.label }} </p>
             </div>
 
-            <div class="flex space-x-2">
+            <div class="flex gap-1">
 
                 <button @click="() => deleteTask(task.id)">
                     <DeleteIcon />
