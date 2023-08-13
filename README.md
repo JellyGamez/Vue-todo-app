@@ -1,4 +1,4 @@
-# Simple todo app
+# Vue todo app
 
 My first Vue project - simple todo app packed with useful features.
 
