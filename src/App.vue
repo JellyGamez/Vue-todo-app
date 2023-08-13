@@ -23,7 +23,7 @@ const filters = computed(() => {
 });
 
 function addNewTask() {
-  if (isEditing.value) {
+  if (isEditing.value && mainInput.value.trim() !== '') {
     const task = tasks.value.find(task => task.id === idToEdit.value);
     task.label = mainInput.value;
     idToEdit.value = undefined;
