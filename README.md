@@ -1,7 +1,6 @@
 # Simple todo app
 
-My first Vue app.
-Nothing too fancy, just a todo app as a starter project
+My first Vue project - simple todo app packed with useful features.
 
 
 ## Features
