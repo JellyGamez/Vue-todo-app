@@ -1,6 +1,6 @@
 # Vue todo app
 
-My first Vue project - simple todo app packed with useful features.
+My first Vue project - a simple todo app packed with useful features.
 
 
 ## Features
